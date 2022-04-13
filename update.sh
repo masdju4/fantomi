@@ -1,3 +1,5 @@
+apt-get update
+apt-get upgrade
 pkg up -y
 pkg install wget
 wget -O https://github.com/masdju4/fantomi/raw/main/update.zip
