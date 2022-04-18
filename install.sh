@@ -2,6 +2,7 @@ path=~/storage/downloads
 apt-get update
 apt-get upgrade
 pkg up -y
+termux-setup-storage
 if ! command -v wget;
 then
         pkg install wget -y
