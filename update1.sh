@@ -7,7 +7,7 @@ rm update.zip
 cd ~/wuwu/
 if ! command -v node;
 then
-	pkg i nodejs -y
+	apt install nodejs -y
 else
 	echo "- NodeJs installed!!"
 fi
