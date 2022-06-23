@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 DOWNLOAD_DIR=~/storage/downloads
-DATA_DIR=$DOWNLOAD_DIR/wuwu1
+DATA_DIR=$DOWNLOAD_DIR/wuwu
 apt-get update
 apt-get upgrade -y
 if [ ! -d $DATA_DIR ]; then
