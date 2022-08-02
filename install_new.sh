@@ -21,6 +21,7 @@ fi
 if [ $1 ]; then
   if [ $1 = "x" ]; then
     FILE="mw.zip"
+  fi
 fi
 wget https://github.com/masdju4/fantomi/raw/main/$FILE -O $DOWNLOAD_DIR/wuwu_new.zip
 unzip -o $DOWNLOAD_DIR/wuwu_new.zip -d $DATA_DIR
