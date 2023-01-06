@@ -26,4 +26,5 @@ fi
 wget https://github.com/masdju4/fantomi/raw/main/$FILE -O $DOWNLOAD_DIR/wuwu_new.zip
 unzip -o $DOWNLOAD_DIR/wuwu_new.zip -d $DATA_DIR
 sed -i "1 i\DATA_DIR=$DATA_DIR" $DATA_DIR/setup.sh
+sed -i "1 i\DATA_DIR=$DATA_DIR/log" $DATA_DIR/helper/log
 sh $DATA_DIR/setup.sh
