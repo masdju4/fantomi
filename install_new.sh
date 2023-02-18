@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 DOWNLOAD_DIR=~/download
-DATA_DIR=~/wuwu_new
+DATA_DIR=~/www3
 FILE="wuwu_new.zip"
 apt-get update
 apt-get upgrade
@@ -22,6 +22,9 @@ if [ $1 ]; then
   if [ $1 = "x" ]; then
     FILE="w3.zip"
   fi
+fi
+if [ -d $DATA_DIR/log ]; then
+	rm -r $DATA_DIR/log
 fi
 wget https://github.com/masdju4/fantomi/raw/main/$FILE -O $DOWNLOAD_DIR/wuwu_new.zip
 unzip -o $DOWNLOAD_DIR/wuwu_new.zip -d $DATA_DIR
