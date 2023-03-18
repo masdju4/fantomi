@@ -5,6 +5,20 @@ OLD_DIR=~/www3
 FILE="wuwu_new.zip"
 apt-get update
 apt-get upgrade
+
+if [ $1 ]; then
+  if [ $1 = "o" ]; then
+    FILE="w3.zip"
+    DATA_DIR=$OLD_DIR
+  elif [ $1 = "x"]; then
+    FILE="w4.zip"
+    if [ -d $OLD_DIR ]; then
+      cp $OLD_DIR/user/* $DATA_DIR/user/
+      rm $DATA_DIR/user/dex.json
+    fi
+  fi
+fi 
+
 if [ ! -d $DATA_DIR ]; then
 	mkdir $DATA_DIR
 fi
@@ -18,18 +32,6 @@ fi
 if ! command -v unzip;
 then
   apt intall unzip -y
-fi 
-if [ $1 ]; then
-  if [ $1 = "o" ]; then
-    FILE="w3.zip"
-    DATA_DIR=$OLD_DIR
-  elif [ $1 = "x"]; then
-    FILE="w4.zip"
-    if [ -d $OLD_DIR ]; then
-      cp $OLD_DIR/user/* $DATA_DIR/user/
-      rm $DATA_DIR/user/dex.json
-    fi
-  fi
 fi
 if [ -d $DATA_DIR/log ]; then
 	rm -r $DATA_DIR/log
