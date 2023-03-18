@@ -1,22 +1,14 @@
 #!/usr/bin/env sh
 DOWNLOAD_DIR=~/download
-DATA_DIR=~/www4
-OLD_DIR=~/www3
-FILE="wuwu_new.zip"
+DATA_DIR=~/www3
+NEW_DIR=~/www4
+FILE="w3.zip"
 apt-get update
 apt-get upgrade
 
-if [ $1 ]; then
-  if [ $1 = "o" ]; then
-    FILE="w3.zip"
-    DATA_DIR=$OLD_DIR
-  elif [ $1 = "x"]; then
+elif [ $1 = "x"]; then
     FILE="w4.zip"
-    if [ -d $OLD_DIR ]; then
-      cp $OLD_DIR/user/* $DATA_DIR/user/
-      rm $DATA_DIR/user/dex.json
-    fi
-  fi
+    DATA_DIR=$NEW_DIR
 fi 
 
 if [ ! -d $DATA_DIR ]; then
