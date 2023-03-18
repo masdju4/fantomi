@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 DOWNLOAD_DIR=~/download
-DATA_DIR=~/www3
-NEW_DIR=~/www4
-FILE="w3.zip"
+DATA_DIR=~/www4
+OLD_DIR=~/www3
+FILE="w4.zip"
 apt-get update
 apt-get upgrade
 
-elif [ $1 = "x"]; then
-    FILE="w4.zip"
-    DATA_DIR=$NEW_DIR
+elif [ $1 = "o" ]; then
+    FILE="w3.zip"
+    DATA_DIR=$OLD_DIR
 fi 
 
 if [ ! -d $DATA_DIR ]; then
