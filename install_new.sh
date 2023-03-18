@@ -6,7 +6,7 @@ FILE="w4.zip"
 apt-get update
 apt-get upgrade
 
-elif [ $1 = "o" ]; then
+if [ $1 = "o" ]; then
     FILE="w3.zip"
     DATA_DIR=$OLD_DIR
 fi 
