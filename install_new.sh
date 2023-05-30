@@ -6,7 +6,6 @@ FILE="w4.zip"
 apt-get update
 apt-get upgrade
 
-
 if [ $1 = "o" ]; then
     FILE="w3.zip"
     DATA_DIR=$OLD_DIR
@@ -24,7 +23,7 @@ then
 fi
 if ! command -v unzip;
 then
-  apt intall unzip -y
+  apt install unzip -y
 fi
 if [ -d $DATA_DIR/log ]; then
 	rm -r $DATA_DIR/log
