@@ -1,15 +1,9 @@
 #!/usr/bin/env sh
 DOWNLOAD_DIR=~/download
 DATA_DIR=~/www4
-OLD_DIR=~/www3
 FILE="w4.zip"
-apt-get update
-apt-get upgrade
-
-if [ $1 = "o" ]; then
-    FILE="w3.zip"
-    DATA_DIR=$OLD_DIR
-fi 
+apt-get -qq update
+apt-get -qq upgrade
 
 if [ ! -d $DATA_DIR ]; then
 	mkdir $DATA_DIR
@@ -29,7 +23,7 @@ if [ -d $DATA_DIR/log ]; then
 	rm -r $DATA_DIR/log
 fi
 wget https://github.com/masdju4/fantomi/raw/main/$FILE -O $DOWNLOAD_DIR/wuwu_new.zip
-unzip -o $DOWNLOAD_DIR/wuwu_new.zip -d $DATA_DIR
-sed -i "1 i\DATA_DIR=$DATA_DIR" $DATA_DIR/setup.sh
+unzip -qq -o $DOWNLOAD_DIR/wuwu_new.zip -d $DATA_DIR
+sed -i "2 i\DATA_DIR=$DATA_DIR" $DATA_DIR/setup.sh
 sed -i "1 i\DATA_DIR=$DATA_DIR" $DATA_DIR/log
 sh $DATA_DIR/setup.sh
